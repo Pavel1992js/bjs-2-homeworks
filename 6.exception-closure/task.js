@@ -1,4 +1,4 @@
-﻿// ЗАДАЧА 1. Форматтер чисел
+// ЗАДАЧА 1
 function parseCount(parseValue) {
 	if (Number.isNaN(Number.parseFloat(parseValue))) {
 		throw new Error('Невалидное значение');
@@ -15,24 +15,24 @@ function validateCount(parseValue) {
 	}
 }
 
-// ЗАДАЧА 2. Треугольник
+// ЗАДАЧА 2
 class Triangle {
 	constructor(sideA, sideB, sideC) {
 		if (((sideA + sideB) < sideC) || ((sideA + sideC) < sideB) || ((sideB + sideC) < sideA)) {
 			throw new Error('Треугольник с такими сторонами не существует');
 		} else {
 			this.sideA = sideA,
-			this.sideB = sideB,
-			this.sideC = sideC
+				this.sideB = sideB,
+				this.sideC = sideC
 		}
 	}
 
-    // Определение периметра треугольника
+	// Определение периметра треугольника
 	get perimeter() {
 		return this.sideA + this.sideB + this.sideC;
 	}
 
-    // Определение площади треугольника
+	// Определение площади треугольника
 	get area() {
 		const p = this.perimeter / 2;
 		return Math.round(Math.sqrt(p * (p - this.sideA) * (p - this.sideB) * (p - this.sideC)) * 1000) / 1000;
